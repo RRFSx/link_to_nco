@@ -38,7 +38,7 @@ f'''#!/usr/bin/env bash
 source /etc/profile
 module load rocoto
 cd {expdir}
-rocotorun -w rrfs.xml -d rrfs.db
+rocotorun -w link.xml -d link.db
 '''
     rocotoFile.write(text)
 
