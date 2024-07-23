@@ -1,0 +1,22 @@
+#!/user/bin/env bash
+# Aloha! This file is to setup some top level experiment options
+#
+#
+export REALTIME=true     # true, false
+export COMINrap='/public/data/grib/ftp_rap_hyb/7/0/105/0_151987_30'
+export COMINgfs='/public/data/grib/ftp_rap_hyb/7/0/105/0_151987_30'
+#
+export DEADLINE="12:00:00"
+export ACCOUNT="rtrr"
+export QUEUE="rth"
+export PARTITION=kjet
+export RESERVATION="rrfsdet"
+export WALLTIME="00:05:00"
+export NODES="<cores>1</cores>"
+export MAXTRIES=50
+export NATIVE=""
+#
+export STARTTIME_RAP="00:50:00"
+export CYCLEDEF_RAP="202407220000 202507220000 01:00:00"
+export CYCLEDEF_RAP_G2="202407220300 202507030000 06:00:00"
+#

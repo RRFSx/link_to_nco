@@ -1,0 +1,6 @@
+*.swp
+__pycache__
+logs/
+link.xml
+run_rocoto.sh
+*.db
