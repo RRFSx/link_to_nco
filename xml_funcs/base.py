@@ -175,7 +175,7 @@ def xml_task(xmlFile,expdir,task_id,cycledefs,dcTaskEnv={},dependencies="",metat
     meta_id=task_id
   dcTaskRes={
     'command': f'{command}',
-    'join': f'{expdir}/logs/rap.@Y@m@d/@H/{task_id}_@Y@m@d@H.log',
+    'join': f'{expdir}/logs/{meta_id}.@Y@m@d/@H/{task_id}_@Y@m@d@H.log',
     'jobname': f'ln_{task_id}_c@H',
     'account': get_cascade_env(f'ACCOUNT_{task_id}'.upper()),
     'queue': get_cascade_env(f'QUEUE_{task_id}'.upper()),

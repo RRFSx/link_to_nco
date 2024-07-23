@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 export TZ="GMT"
 set -x
-src="/public/data/grib/ftp_rap_hyb/7/0/105/0_151987_30"
-dst="/lfs5/BMC/nrtrr/NCO_data/rap"
+src="/public/data/grids/gfs/0p25deg/grib2"
+dst="/lfs5/BMC/nrtrr/NCO_data/gfs"
 
 # the workflow provides $CDATE and $GRBFILE env variables
 fname=${GRBFILE##*/}
@@ -11,7 +11,7 @@ ndays=$(( 10#${fname:2:3} - 1 ))
 PDY=$(date -d "${ndays} days ${yyyy}-01-01" +"%Y%m%d")
 HH=${fname:5:2}
 fhr=$(( 10#${fname:7:6} ))
-fhr=$(printf "%02d" ${fhr})
-fpath=${dst}/rap.${PDY}
+fhr=$(printf "%03d" ${fhr})
+fpath=${dst}/gfs.${PDY}/${HH}
 mkdir -p ${fpath}
-ln -snf ${GRBFILE} ${fpath}/rap.t${HH}z.wrfnatf${fhr}.grib2 #do hard links by the file owner if possible
+ln -snf ${GRBFILE} ${fpath}/gfs.t${HH}z.pgrb2.0p25.f${fhr} #do hard links by the file owner if possible

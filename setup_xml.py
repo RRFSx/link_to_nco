@@ -3,7 +3,7 @@
 import os, sys, stat
 from xml_funcs.base import header_begin, header_entities, header_end, source, \
   wflow_begin, wflow_log, wflow_cycledefs, wflow_end
-from xml_funcs.tasks1 import rap
+from xml_funcs.tasks1 import rap, gfs
 
 ### setup_xml
 def setup_xml(expdir):
@@ -11,6 +11,7 @@ def setup_xml(expdir):
   source('exp.setup')
   #
   dcCycledef={}
+  dcCycledef['gfs']=os.getenv('CYCLEDEF_GFS')
   dcCycledef['rap']=os.getenv('CYCLEDEF_RAP')
   dcCycledef['rap_g2']=os.getenv('CYCLEDEF_RAP_G2')
 
@@ -26,6 +27,7 @@ def setup_xml(expdir):
     # assemble tasks for an experiment or setup/generate an xml file
     rap(xmlFile,expdir,"rap",0,21)
     rap(xmlFile,expdir,"rap_g2",22,51)
+    gfs(xmlFile,expdir,"gfs",0,60)
     #
     wflow_end(xmlFile)
 
