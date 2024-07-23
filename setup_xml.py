@@ -24,8 +24,8 @@ def setup_xml(expdir):
     wflow_cycledefs(xmlFile,dcCycledef)
     
     # assemble tasks for an experiment or setup/generate an xml file
-    rap(xmlFile,expdir)
-    #rap_g2(xmlFile,expdir)
+    rap(xmlFile,expdir,"rap",0,21)
+    rap(xmlFile,expdir,"rap_g2",22,51)
     #
     wflow_end(xmlFile)
 

@@ -3,13 +3,14 @@ import os
 from xml_funcs.base import xml_task, source, get_cascade_env
 
 ### begin of rap --------------------------------------------------------
-def rap(xmlFile, expdir):
-  meta_id='rap'
-  cycledefs='rap'
+def rap(xmlFile, expdir, meta_id, start, stop):
+  meta_id=meta_id
+  cycledefs=meta_id
   # metatask (nested or not)
-  length=21
+  start=start
+  stop=stop
   interval=1
-  meta_hr= ''.join(f'{i:02d} ' for i in range(0,length+1,interval)).strip()
+  meta_hr= ''.join(f'{i:02d} ' for i in range(start,stop+1,interval)).strip()
   command=f'{expdir}/rap.link_to_nco_namespace.sh'
   meta_bgn=f'''
 <metatask name="{meta_id}">
@@ -40,4 +41,3 @@ def rap(xmlFile, expdir):
   #
   xml_task(xmlFile,expdir,task_id,cycledefs,dcTaskEnv,dependencies,True,meta_id,meta_bgn,meta_end,command)
 ### end of rap --------------------------------------------------------
-
