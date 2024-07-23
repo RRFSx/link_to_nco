@@ -14,7 +14,7 @@ def setup_xml(expdir):
   dcCycledef['rap']=os.getenv('CYCLEDEF_RAP')
   dcCycledef['rap_g2']=os.getenv('CYCLEDEF_RAP_G2')
 
-  fPath=f"{expdir}/link2.xml"
+  fPath=f"{expdir}/link.xml"
   with open(fPath, 'w') as xmlFile:
     header_begin(xmlFile)
     header_end(xmlFile)
