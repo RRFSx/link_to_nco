@@ -22,7 +22,6 @@ def rap(xmlFile, expdir, meta_id, start, stop):
   COMINrap=os.getenv("COMINrap","COMINrap_not_defined")
   # Task-specific EnVars beyond the task_common_vars
   dcTaskEnv={
-    'CDATE': '<cyclestr>@Y@m@d@H</cyclestr>',
     'GRBFILE': f'<cyclestr>{COMINrap}/@y@j@H0000#fhr#</cyclestr>'
   }
 
@@ -62,7 +61,6 @@ def gfs(xmlFile, expdir, meta_id, start, stop):
   COMINgfs=os.getenv("COMINgfs","COMINgfs_not_defined")
   # Task-specific EnVars beyond the task_common_vars
   dcTaskEnv={
-    'CDATE': '<cyclestr>@Y@m@d@H</cyclestr>',
     'GRBFILE': f'<cyclestr>{COMINgfs}/@y@j@H000#fhr#</cyclestr>'
   }
 

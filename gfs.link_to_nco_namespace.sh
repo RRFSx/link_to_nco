@@ -4,7 +4,7 @@ set -x
 src="/public/data/grids/gfs/0p25deg/grib2"
 dst="/lfs5/BMC/nrtrr/NCO_data/gfs"
 
-# the workflow provides $CDATE and $GRBFILE env variables
+# the workflow provides the $GRBFILE env variables
 fname=${GRBFILE##*/}
 yyyy=20${fname:0:2}
 ndays=$(( 10#${fname:2:3} - 1 ))

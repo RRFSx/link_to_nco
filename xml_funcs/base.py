@@ -38,17 +38,7 @@ def header_begin(xmlFile):
 ### header_entities_
 def header_entities(xmlFile,expdir):
   HOMErrfs=os.getenv('HOMErrfs','HOMErrfs_not_defined')
-  text = f'''
-<!ENTITY task_common_vars\n\
-"\n\
-  <envar><name>HOMErrfs</name><value>{HOMErrfs}</value></envar>\n\
-  <envar><name>EXPDIR</name><value>{expdir}</value></envar>\n\
-  <envar><name>CDATE</name><value><cyclestr>@Y@m@d@H</cyclestr></value></envar>\n\
-  <envar><name>PDY</name><value><cyclestr>@Y@m@d</cyclestr></value></envar>\n\
-  <envar><name>cyc</name><value><cyclestr>@H</cyclestr></value></envar>\n\
-"\n\
->\n\
-'''
+  text = ""
   xmlFile.write(text)
 
 ### header_end
